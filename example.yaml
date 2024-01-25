@@ -2,7 +2,7 @@ type_: object
 properties:
 - name: user
   type_: object
-  count: 1
+  count: 10
   properties:
   - name: name
     type_: string.name
@@ -10,6 +10,8 @@ properties:
     type_: string.surname
   - name: job
     type_: string.job
+  - name: zip code
+    type_: string.zip
   - name: age
     type_: integer
     options:
