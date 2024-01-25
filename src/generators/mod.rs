@@ -14,3 +14,4 @@ pub mod string_country;
 pub mod string_state;
 pub mod string_zip;
 pub mod string_street;
+pub mod string_job;
