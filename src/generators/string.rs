@@ -1,18 +1,14 @@
+use super::string_name;
+
 pub fn generate(t: &str) -> serde_json::Value {
     match t {
-        "name" => name::generate(),
+        "name" => string_name::generate(),
         "email" => email::generate(),
         "phone" => phone::generate(),
         "birthday" => birthday::generate(),
         "address" => address::generate(),
         _ => serde_json::json!(null),
     }
-}
-
-mod name {
-    pub fn generate() -> serde_json::Value {
-        serde_json::json!("hello world")
-    }    
 }
 
 mod email {

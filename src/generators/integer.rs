@@ -1,4 +1,4 @@
-use crate::description::description::Property;
+use crate::description::Property;
 
 use rand::Rng;
 

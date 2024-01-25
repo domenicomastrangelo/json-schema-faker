@@ -5,7 +5,7 @@ use std::{
     env::args, io::{Read, Write}, path::Path
 };
 
-use description::description::{Description, Property};
+use description::{Description, Property};
 
 fn main() {
     let path = args().nth(1).unwrap_or_else(|| {
