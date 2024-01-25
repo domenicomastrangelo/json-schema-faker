@@ -12,6 +12,8 @@ properties:
     type_: string.job
   - name: zip code
     type_: string.zip
+  - name: state
+    type_: string.state
   - name: age
     type_: integer
     options:
