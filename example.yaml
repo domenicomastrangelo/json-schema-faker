@@ -8,6 +8,8 @@ properties:
     type_: string.name
   - name: surname
     type_: string.surname
+  - name: email
+    type_: string.email
   - name: job
     type_: string.job
   - name: zip code
