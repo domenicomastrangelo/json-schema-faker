@@ -4,6 +4,7 @@ pub mod integer;
 pub mod number;
 pub mod boolean;
 pub mod string_name;
+pub mod string_surname;
 pub mod string_email;
 pub mod string_phone;
 pub mod string_birthday;

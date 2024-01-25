@@ -5,7 +5,9 @@ properties:
   count: 1
   properties:
   - name: name
-    type_: string
+    type_: string.name
+  - name: surname
+    type_: string.surname
   - name: age
     type_: integer
     options:
@@ -15,12 +17,12 @@ properties:
     type_: boolean
     default: false
   - name: address
-    type_: string
+    type_: string.address
 - name: company
   type_: object
   count: 1
   properties:
   - name: name
-    type_: string
+    type_: string.name
   - name: address
-    type_: string
+    type_: string.address
