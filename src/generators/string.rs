@@ -1,6 +1,6 @@
 use super::{
-    string_address, string_birthday, string_city, string_country, string_email, string_name,
-    string_phone, string_state, string_street, string_surname, string_zip,
+    string_address, string_birthday, string_city, string_country, string_email, string_job,
+    string_name, string_phone, string_state, string_street, string_surname, string_zip,
 };
 
 pub fn generate(t: &str) -> serde_json::Value {
@@ -16,6 +16,7 @@ pub fn generate(t: &str) -> serde_json::Value {
         "state" => string_state::generate(),
         "zip" => string_zip::generate(),
         "street" => string_street::generate(),
+        "job" => string_job::generate(),
         _ => serde_json::json!(null),
     }
 }
