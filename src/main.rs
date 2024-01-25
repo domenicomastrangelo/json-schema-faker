@@ -86,7 +86,7 @@ fn render_property(prop: &Property) -> serde_json::Value {
             }
             "array" => schema = generators::array::generate(),
             "string" => {
-                schema = generators::string::generate(type_specific);
+                schema = generators::string::generate(type_specific, prop);
             }
             "integer" => {
                 schema = generators::integer::generate(prop);

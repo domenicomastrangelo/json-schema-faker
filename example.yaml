@@ -24,6 +24,11 @@ properties:
     type_: string.address
   - name: phone
     type_: string.phone
+  - name: birthday
+    type_: string.birthday
+    options:
+      min: 1970-01-01
+      max: 2000-01-01
   - name: age
     type_: integer
     options:
