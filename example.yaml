@@ -14,6 +14,8 @@ properties:
     type_: string.job
   - name: zip code
     type_: string.zip
+  - name: city
+    type_: string.city
   - name: state
     type_: string.state
   - name: phone
