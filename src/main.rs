@@ -68,8 +68,10 @@ fn render_property(prop: &Property) -> serde_json::Value {
 
     for _ in 0..count {
         let mut schema = serde_json::json!({});
+        let type_ = prop.type_.split(".").nth(0).unwrap_or("");
+        let type_specific = prop.type_.split(".").nth(1).unwrap_or("");
 
-        match prop.type_ {
+        match type_ {
             "object" => {
                 match prop.properties {
                     Some(ref properties) => {
@@ -84,7 +86,7 @@ fn render_property(prop: &Property) -> serde_json::Value {
             }
             "array" => schema = generators::array::generate(),
             "string" => {
-                schema = generators::string::generate(prop.type_.split(".").last().unwrap_or(""));
+                schema = generators::string::generate(type_specific);
             }
             "integer" => {
                 schema = generators::integer::generate(prop);
