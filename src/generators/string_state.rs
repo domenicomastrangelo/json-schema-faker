@@ -1,5 +1,3 @@
-use rand::Rng;
-
 const STATE_LIST: [&str; 114] = [
     "Alabama",
     "Alaska",
@@ -117,8 +115,7 @@ const STATE_LIST: [&str; 114] = [
     "Mato Grosso do Sul",
 ];
 
-pub fn generate() -> serde_json::Value {
-    let mut rng = rand::thread_rng();
+pub fn generate(rng: &mut impl rand::Rng) -> serde_json::Value {
     let state = rng.gen_range(0..STATE_LIST.len());
 
     serde_json::json!(STATE_LIST[state])

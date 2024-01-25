@@ -1,5 +1,3 @@
-use rand::Rng;
-
 const CITY_LIST: [&str; 114] = [
     "New York",
     "Los Angeles",
@@ -118,8 +116,7 @@ const CITY_LIST: [&str; 114] = [
 
 ];
 
-pub fn generate() -> serde_json::Value {
-    let mut rng = rand::thread_rng();
+pub fn generate(rng: &mut impl rand::Rng) -> serde_json::Value {
     let random_number: usize = rng.gen_range(0..CITY_LIST.len());
 
     serde_json::json!(CITY_LIST[random_number])

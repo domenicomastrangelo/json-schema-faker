@@ -1,5 +1,3 @@
-use rand::Rng;
-
 const COUNTRY_LIST: [&str; 197] = [
     "Afghanistan",
     "Albania",
@@ -200,8 +198,7 @@ const COUNTRY_LIST: [&str; 197] = [
     "Zimbabwe",
 ];
 
-pub fn generate() -> serde_json::Value {
-    let mut rng = rand::thread_rng();
+pub fn generate(rng: &mut impl rand::Rng) -> serde_json::Value {
     let random_number: usize = rng.gen_range(0..COUNTRY_LIST.len());
 
     serde_json::json!(COUNTRY_LIST[random_number])

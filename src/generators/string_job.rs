@@ -1,5 +1,3 @@
-use rand::Rng;
-
 const JOB_TITLES: [&str; 114] = [
     "Accountant",
     "Actor",
@@ -117,8 +115,7 @@ const JOB_TITLES: [&str; 114] = [
     "Sociologist",
 ];
 
-pub fn generate() -> serde_json::Value {
-    let mut rng = rand::thread_rng();
+pub fn generate(rng: &mut impl rand::Rng) -> serde_json::Value {
     let index = rng.gen_range(0..JOB_TITLES.len());
 
     serde_json::json!(JOB_TITLES[index])

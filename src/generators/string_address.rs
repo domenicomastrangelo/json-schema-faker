@@ -1,5 +1,3 @@
-use rand::Rng;
-
 const ADDRESS_LIST: [&str; 114] = [
     "101 Elm St, New York, 49491, France",
     "101 Main St, Paris, 69918, Japan",
@@ -117,8 +115,7 @@ const ADDRESS_LIST: [&str; 114] = [
     "191 Park Ave, Moscow, 35891, Russia",
 ];
 
-pub fn generate() -> serde_json::Value {
-    let mut rng = rand::thread_rng();
+pub fn generate(rng: &mut impl rand::Rng) -> serde_json::Value {
     let address = ADDRESS_LIST[rng.gen_range(0..ADDRESS_LIST.len())];
 
     serde_json::json!(address)

@@ -1,8 +1,6 @@
 use crate::description::Property;
 
-use rand::Rng;
-
-pub fn generate(p: &Property) -> serde_json::Value {
+pub fn generate(p: &Property, rng: &mut impl rand::Rng) -> serde_json::Value {
     let mut min = 0;
     let mut max = 100;
 
@@ -18,8 +16,6 @@ pub fn generate(p: &Property) -> serde_json::Value {
     if let Some(m) = opts.get("max") {
         max = m.as_i64().unwrap_or(max);
     }
-
-    let mut rng = rand::thread_rng();
 
     serde_json::json!(rng.gen_range(min..max))
 }

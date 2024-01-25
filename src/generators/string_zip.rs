@@ -1,5 +1,3 @@
-use rand::Rng;
-
 const ZIP_LIST: [&str; 114] = [
     "10001",
     "EC1A 1BB",
@@ -117,8 +115,7 @@ const ZIP_LIST: [&str; 114] = [
     "ZE1 1RO",
 ];
 
-pub fn generate() -> serde_json::Value {
-    let mut rng = rand::thread_rng();
+pub fn generate(rng: &mut impl rand::Rng) -> serde_json::Value {
     let index = rng.gen_range(0..ZIP_LIST.len());
 
     serde_json::json!(ZIP_LIST[index])

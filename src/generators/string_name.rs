@@ -1,5 +1,3 @@
-use rand::Rng;
-
 const NAME_LIST: [&str; 114] = [
     "James",
     "John",
@@ -117,8 +115,7 @@ const NAME_LIST: [&str; 114] = [
     "Allen",
 ];
 
-pub fn generate() -> serde_json::Value {
-    let mut rng = rand::thread_rng();
+pub fn generate(rng: &mut impl rand::Rng) -> serde_json::Value {
     let name = rng.gen_range(0..NAME_LIST.len()-1);
     
     serde_json::json!(NAME_LIST[name])

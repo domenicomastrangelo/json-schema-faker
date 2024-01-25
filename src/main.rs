@@ -1,8 +1,10 @@
-mod generators;
 mod description;
+mod generators;
 
 use std::{
-    env::args, io::{Read, Write}, path::Path
+    env::args,
+    io::{Read, Write},
+    path::Path,
 };
 
 use description::{Description, Property};
@@ -66,6 +68,8 @@ fn render_property(prop: &Property) -> serde_json::Value {
         None => 1,
     };
 
+    let mut rng = rand::thread_rng();
+
     for _ in 0..count {
         let mut schema = serde_json::json!({});
         let type_ = prop.type_.split(".").nth(0).unwrap_or("");
@@ -84,18 +88,18 @@ fn render_property(prop: &Property) -> serde_json::Value {
                     }
                 };
             }
-            "array" => schema = generators::array::generate(),
+            "array" => schema = generators::array::generate(&mut rng),
             "string" => {
                 schema = generators::string::generate(type_specific, prop);
             }
             "integer" => {
-                schema = generators::integer::generate(prop);
+                schema = generators::integer::generate(prop, &mut rng);
             }
             "number" => {
-                schema = generators::number::generate(prop);
+                schema = generators::number::generate(prop, &mut rng);
             }
             "boolean" => {
-                schema = generators::boolean::generate();
+                schema = generators::boolean::generate(&mut rng);
             }
             "null" => {
                 schema = serde_json::json!(null);

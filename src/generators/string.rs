@@ -6,19 +6,21 @@ use super::{
 };
 
 pub fn generate(t: &str, p: &Property) -> serde_json::Value {
+    let mut rng = rand::thread_rng();
+
     match t {
-        "name" => string_name::generate(),
-        "surname" => string_surname::generate(),
-        "email" => string_email::generate(),
-        "phone" => string_phone::generate(),
-        "birthday" => string_birthday::generate(p),
-        "address" => string_address::generate(),
-        "city" => string_city::generate(),
-        "country" => string_country::generate(),
-        "state" => string_state::generate(),
-        "zip" => string_zip::generate(),
-        "street" => string_street::generate(),
-        "job" => string_job::generate(),
+        "name" => string_name::generate(&mut rng),
+        "surname" => string_surname::generate(&mut rng),
+        "email" => string_email::generate(&mut rng),
+        "phone" => string_phone::generate(&mut rng),
+        "birthday" => string_birthday::generate(p, &mut rng),
+        "address" => string_address::generate(&mut rng),
+        "city" => string_city::generate(&mut rng),
+        "country" => string_country::generate(&mut rng),
+        "state" => string_state::generate(&mut rng),
+        "zip" => string_zip::generate(&mut rng),
+        "street" => string_street::generate(&mut rng),
+        "job" => string_job::generate(&mut rng),
         _ => serde_json::json!(null),
     }
 }

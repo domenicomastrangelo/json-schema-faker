@@ -2,7 +2,7 @@ type_: object
 properties:
 - name: user
   type_: object
-  count: 10
+  count: 1000000
   properties:
   - name: name
     type_: string.name

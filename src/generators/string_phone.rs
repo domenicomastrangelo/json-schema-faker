@@ -1,5 +1,3 @@
-use rand::Rng;
-
 const PHONE_LIST: [&str; 114] = [
     "+4 630-472-1499",
     "008382243",
@@ -117,8 +115,7 @@ const PHONE_LIST: [&str; 114] = [
     "+15-310-552-5730",
 ];
 
-pub fn generate() -> serde_json::Value {
-    let mut rng = rand::thread_rng();
+pub fn generate(rng: &mut impl rand::Rng) -> serde_json::Value {
     let index = rng.gen_range(0..PHONE_LIST.len());
 
     serde_json::json!(PHONE_LIST[index])

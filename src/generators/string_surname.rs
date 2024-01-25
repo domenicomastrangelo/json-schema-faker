@@ -1,5 +1,3 @@
-use rand::Rng;
-
 const SURNAME_LIST: [&str; 114] = [
     "Smith",
     "Johnson",
@@ -117,8 +115,7 @@ const SURNAME_LIST: [&str; 114] = [
     "Ellis",
 ];
 
-pub fn generate() -> serde_json::Value {
-    let mut rng = rand::thread_rng();
+pub fn generate(rng: &mut impl rand::Rng) -> serde_json::Value {
     let index = rng.gen_range(0..SURNAME_LIST.len());
 
     serde_json::json!(SURNAME_LIST[index])
