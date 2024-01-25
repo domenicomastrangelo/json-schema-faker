@@ -9,30 +9,30 @@ pub fn generate(t: &str) -> serde_json::Value {
     }
 }
 
-pub mod name {
+mod name {
     pub fn generate() -> serde_json::Value {
         serde_json::json!("hello world")
     }    
 }
 
-pub mod email {
+mod email {
     pub fn generate() -> serde_json::Value {
         serde_json::json!("hello world")
     }    
 }
 
-pub mod phone {
+mod phone {
     pub fn generate() -> serde_json::Value {
         serde_json::json!("hello world")
     }    
 }
 
-pub mod birthday {
+mod birthday {
     pub fn generate() -> serde_json::Value {
         serde_json::json!("hello world")
     }    
 }
-pub mod address {
+mod address {
     pub fn generate() -> serde_json::Value {
         serde_json::json!("hello world")
     }    
