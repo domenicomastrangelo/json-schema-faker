@@ -1,3 +1,7 @@
-pub fn generate() -> serde_json::Value {
-    serde_json::json!(100)
+use crate::description::description::Property;
+
+use super::integer;
+
+pub fn generate(p: &Property) -> serde_json::Value {
+    integer::generate(p)
 }
