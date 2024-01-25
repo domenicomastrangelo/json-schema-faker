@@ -20,6 +20,8 @@ properties:
     type_: string.country
   - name: state
     type_: string.state
+  - name: address
+    type_: string.address
   - name: phone
     type_: string.phone
   - name: age
