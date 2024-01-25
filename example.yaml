@@ -16,6 +16,8 @@ properties:
     type_: string.zip
   - name: city
     type_: string.city
+  - name: country
+    type_: string.country
   - name: state
     type_: string.state
   - name: phone
