@@ -14,11 +14,13 @@ properties:
     type_: string.zip
   - name: state
     type_: string.state
+  - name: phone
+    type_: string.phone
   - name: age
     type_: integer
     options:
       min: 0
-      max: 999
+      max: 80
   - name: adult
     type_: boolean
     default: false
