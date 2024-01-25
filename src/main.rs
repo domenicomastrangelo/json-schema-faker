@@ -84,13 +84,13 @@ fn render_property(prop: &Property) -> serde_json::Value {
             }
             "array" => schema = generators::array::generate(),
             "string" => {
-                schema = generators::string::generate();
+                schema = generators::string::generate(prop.type_.split(".").last().unwrap_or(""));
             }
             "integer" => {
-                schema = generators::integer::generate(&prop);
+                schema = generators::integer::generate(prop);
             }
             "number" => {
-                schema = generators::number::generate();
+                schema = generators::number::generate(prop);
             }
             "boolean" => {
                 schema = generators::boolean::generate();
